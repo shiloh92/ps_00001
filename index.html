@@ -12,6 +12,8 @@
   </script> -->
   <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
  -->
+  <script src="waxjs.js">
+  </script> 
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/space-mono" rel="stylesheet">
@@ -19,9 +21,7 @@
   </script><script
   src="https://code.jquery.com/jquery-3.6.3.min.js"
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-  crossorigin="anonymous"></script>
-  <script src="waxjs.js">
-  </script> 
+  crossorigin="anonymous"></script> 
   <script src="https://unpkg.com/@popperjs/core@2"></script>
 
 </head>
@@ -38,7 +38,8 @@
       <span id="player_main">Wallet and Active asset id goes here.</span>
       <span id="player_secondary">Asset data goes here.</span>
     </div>
-    <button id="login_btn" class="btn green_btn" onclick="loadCollections('1p3ty.wam')">Login</button>
+    <button id="login_btn" class="btn green_btn" onclick="login()">Login</button>
+    <button id="login_btn" class="btn green_btn" onclick="loadCollections('1p3ty.wam')">Test Load Inventory</button>
     <button class="btn green_btn" onclick="scan()">Scan</button>
     <button class="btn green_btn" onclick="refiner()">Refine</button>
     <button class="btn green_btn">Attack (F)</button>
@@ -155,6 +156,11 @@ makeTea('action_h1')">TEA</button> -->
   <script src="index.js"></script>
   <script>
     // set the defaults for the refiner
+
+const wax = new waxjs.WaxJS({
+  rpcEndpoint: 'https://wax.greymass.com'
+})
+    
     window.onload = function () {
       document.getElementById("mineral-select").value = "mog";
       document.getElementById("refine-select").value = "ils";
