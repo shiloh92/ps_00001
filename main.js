@@ -14,12 +14,12 @@ var player = {
   minerals: { mog: 1, ils: 1, cel: 1 }
 };
 
-function preload() {
-  // display pre login message
-  drawGrid(gridCtx);
-  // drawSystemOffline(gridCtx)
-  gridCanvas.style.zIndex = -1;
-}
+// function preload() {
+//   // display pre login message
+//   drawGrid(gridCtx);
+//   // drawSystemOffline(gridCtx)
+//   gridCanvas.style.zIndex = -1;
+// }
 
 function startGame() {
   asteroidArray = createStarSystem(1, 32);
@@ -90,7 +90,7 @@ function removeAsteroidFromCanvas(asteroid) {
   }
 }
 
-preload();  
+// preload();  
 
 
 

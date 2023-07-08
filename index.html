@@ -7,7 +7,6 @@
   <title>Risk & Tremble: Brave the dangers, mine the riches | Space Mining Survival Adventure Game with WAX Blockchain
     Technology</title>
   <link rel="shortcut icon" href="./images/favicon.ico">
-
   <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.min.js">
   </script> -->
   <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
@@ -39,7 +38,6 @@
       <span id="player_secondary">Asset data goes here.</span>
     </div>
     <button id="login_btn" class="btn green_btn" onclick="login()">Login</button>
-    <button id="login_btn" class="btn green_btn" onclick="loadCollections('1p3ty.wam')">Test Load Inventory</button>
     <button class="btn green_btn" onclick="scan()">Scan</button>
     <button class="btn green_btn" onclick="refiner()">Refine</button>
     <button class="btn green_btn">Attack (F)</button>
@@ -154,17 +152,13 @@ makeTea('action_h1')">TEA</button> -->
 
 
   <script src="index.js"></script>
-  <script>
-    // set the defaults for the refiner
-
-const wax = new waxjs.WaxJS({
-  rpcEndpoint: 'https://wax.greymass.com'
-})
-    
+  <script> 
     window.onload = function () {
       document.getElementById("mineral-select").value = "mog";
       document.getElementById("refine-select").value = "ils";
     };  
+
+    const wax = new waxjs.WaxJS({rpcEndpoint: 'https://wax.greymass.com'})
   
   </script>
 
