@@ -1,0 +1,78 @@
+cloak makes you invisible but it wont work if you have someone 100 pixels away from you
+moontears token or medal = buy in store or find it somewhere, in exchange for doggy nft
+
+robots go to x and y
+
+refine = math, addition, update
+attack = condition met, comparison, add/subtract and update
+scan = condition met, generate, update
+mine = condition met, add, update
+move = condition met, comparison, update
+login = comparison, load data, update
+TCL mineral!
+
+payoff =  
+xp increase on leaderboard 
+increase shields, cargo
+
+other payoffs=
+higher difficulty enemies
+battle higher hp
+exchange cel for list of nfts on trade page
+mine more mog, ils
+spend credits to make announcement others see
+
+
+// STATIC TV FX for small things or unloaded images?
+
+var ctx = c.getContext("2d", {alpha: false});       // context without alpha channel.
+var idata = ctx.createImageData(c.width, c.height); // create image data
+var buffer32 = new Uint32Array(idata.data.buffer);  // get 32-bit view
+
+(function loop() {
+  noise(ctx);
+  requestAnimationFrame(loop)
+})()
+
+function noise(ctx) {
+  var len = buffer32.length - 1;
+  while(len--) buffer32[len] = Math.random() < 0.5 ? 0 : -1>>0;
+  ctx.putImageData(idata, 0, 0);
+}
+
+
+
+  // ctx.fillStyle = "yellow";
+    // ctx.beginPath();
+    // ctx.arc(star.x, star.y, 18, 0, Math.PI * 2, true);
+    // ctx.closePath();
+    // ctx.fillStyle = "gray";
+    // ctx.fill();
+     
+// https://i.ibb.co/sVWW0M8/Asteroid.png
+// https://i.ibb.co/7QZTSKz/Asteroid2.png
+
+  // ctx.beginPath();
+    // ctx.arc(x, y, 6, 0, Math.PI * 2, true);
+    // ctx.closePath();
+    // ctx.fillStyle = "#08FA0F";
+    // ctx.fill(); 
+ 
+  
+ 
+
+
+GAME FLOW
+1. If the player has not logged in, show a system offline, login to enable system
+2. On login, we check memo from player on the wax account 1p3ty.wam - get memoes function
+3. If memo exists, we extract the save file
+4. We get the asset id from the save file and if the asset is in their wallet, we set the load state
+5. The player is loaded into the map they were at (if first time, generate the world by object, assign them sectors, star system and all other stats)
+6. The asteroids, npcs and more are generated (for now no save state for them)
+7. The player has their resources, the asset id they used and ship stats and can continue to play. They have their HP and asset status 'hull secure or hull breached' determine if they can use the NFT (for now this is ignored).
+8. The player can now navigate sectors
+9. The player can now click an asteroid and mine it out and the NPCs attempt to mine them as well
+10. The player can scan to get a new asteroid
+11. The player can fire on an enemy ship to destroy it
+12. The NPCs can fire on the player ship and destroy it
+13. The player can repair their ship with a button
