@@ -1,14 +1,6 @@
 var galaxies = ["G1", "G2", "G3", "G4"];
-var asteroidType = ["small asteroid", "large asteroid"]; 
- 
-var imgDir = {
-    'B':5, // bases
-    'S':1, // sm ships
-    'M':14, // m ships
-    'L':22, // lg ships
-    'XL':10, // xl ships
-    'AST':6 // asteroids
-}
+var asteroidType = ["small asteroid", "large asteroid"];   
+  
 var exchangeRates = {
   cel: 0.025,
   mog: 0.12,
