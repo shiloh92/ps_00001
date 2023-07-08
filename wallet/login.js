@@ -1,5 +1,5 @@
 var collab = {};
-var wallet = "3ahb2.wam";
+var wallet = "";
   player = {
     ship: "Not identified",
     asset: "No asset accepted",
@@ -15,16 +15,17 @@ var states = [
   "advanced scan completed",
 ];
 
-var wax_endpoint = "https://api.wax-aa.bountyblok.io";
+var wax_endpoint = "http://wax.pink.gg";
 var wax_api = wax_endpoint + "/atomicassets/v1/assets?collection_name=pseudaimusic&schema_name=";
 var wax_api2 = "&page=1&limit=100&order=desc&sort=asset_id";
   
-async function login() {
+async function login() { 
   const userAccount = await wax.login();
   wallet = wax.userAccount;
-  // const getInventory = await getNFT('pseudaimusic', 'series', userAccount); 
-  collab = await getNFT('urbancltnfts', 'collabnfts', userAccount);  
-  $('#login_btn').text(wallet);  
+// const getInventory = await getNFT('pseudaimusic', 'series', userAccount); 
+ // collab = await getNFT('urbancltnfts', 'collabnfts', userAccount); 
+//  const abc = await loadCollections(wallet);
+  $('#login_btn').text(wallet);   
 }
 
 
@@ -56,12 +57,13 @@ async function loadCollections(user) {
     "&owner=" +
     user +
     wax_api2;
-  myNFTS = await loadBlockchainData(pseudai);
-  myCollab = await loadBlockchainData(collab1);
-  mergedCollection = Object.assign({}, myNFTS, myCollab);
-  const cc = await switchNFT("next", mergedCollection);
-  // we update the nft list that is used for save files
-  const dd = await updatesFluxNFTList(mergedCollection);
+    myNFTS = await loadBlockchainData(pseudai);
+    myNFTs=mergedCollection;
+    myCollab = await loadBlockchainData(collab1);
+    mergedCollection = Object.assign({}, myNFTS, myCollab);
+    const cc = await switchNFT("next", mergedCollection);
+    // we update the nft list that is used for save files
+    const dd = await updatesFluxNFTList(mergedCollection);
 }
 
 
