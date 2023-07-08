@@ -1,6 +1,14 @@
 var sectorSelect = 0;
 var maxStarSystems = 8;
 var asteroidArray = [];
+var imgDir = {
+    'B':5, // bases
+    'S':1, // sm ships
+    'M':14, // m ships
+    'L':22, // lg ships
+    'XL':10, // xl ships
+    'AST':6 // asteroids
+}
 var asteroidImages = prepareImageSources(imgDir['AST'], "asteroids", 'AST');
 var mediumShipImages = prepareImageSources(imgDir['M'], "ships", 'M');
 
